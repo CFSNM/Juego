@@ -68,6 +68,7 @@ public class MainWindow extends JFrame{
         this.add(imagePanel, BorderLayout.CENTER);
 
 
+        imagePanel.repaint();
 
     }
 

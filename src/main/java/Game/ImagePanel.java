@@ -13,8 +13,7 @@ public class ImagePanel extends JPanel {
 
     public ImagePanel(String imagePath){
         this.imagePath = imagePath;
-        image = new ImageIcon(this.getClass().getResource("/resources/shoot.jpg")).getImage();
-        repaint();
+        image = new ImageIcon("/resources/shoot.jpg").getImage();
 
     }
 
@@ -23,8 +22,6 @@ public class ImagePanel extends JPanel {
     {
         g.drawImage(image, 0, 0, getWidth(), getHeight(),
                 this);
-
-        setOpaque(false);
     }
 
     }
