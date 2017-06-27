@@ -8,6 +8,7 @@ public class Launcher {
 
     public static void main(String [] args)
     {
-        new MainWindow();
+        MainWindow mWindow = new MainWindow();
+        mWindow.setVisible(true);
     }
 }

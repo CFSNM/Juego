@@ -6,10 +6,10 @@ package Game;
 public interface IGameCharacter extends IGameItem {
 
     public double getOrientation();
-    public void move();
+    public void setOrientation(double newOrientation);
     public void setSize(double newSize);
     public double getSpeed();
     public void setSpeed(double newSpeed);
     public int getLifePoints();
-    public int setLifePoints(int lifePoints);
+    public void setLifePoints(int lifePoints);
 }

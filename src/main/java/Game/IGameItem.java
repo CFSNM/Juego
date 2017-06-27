@@ -6,7 +6,7 @@ package Game;
 public interface IGameItem {
 
     public Position getPosition();
-    public Position setPosition(Position pos);
+    public void setPosition(Position pos);
     public double getSize();
 
 }

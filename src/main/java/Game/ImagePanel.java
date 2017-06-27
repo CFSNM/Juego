@@ -13,15 +13,21 @@ public class ImagePanel extends JPanel {
 
     public ImagePanel(String imagePath){
         this.imagePath = imagePath;
-        image = new ImageIcon("/resources/shoot.jpg").getImage();
+        image = new ImageIcon(imagePath).getImage();
 
     }
 
     @Override
     public void paint(Graphics g)
     {
-        g.drawImage(image, 0, 0, getWidth(), getHeight(),
-                this);
+        super.paint(g);
+        if(image != null){
+            g.drawImage(image, 0, 0, getWidth(),getHeight(),this);
+
+            setOpaque(false);
+        }else{
+            setOpaque(true);
+        }
     }
 
     }

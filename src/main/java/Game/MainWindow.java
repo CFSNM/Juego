@@ -15,14 +15,16 @@ public class MainWindow extends JFrame{
     private JMenu mainMenu;
     private JMenuItem newGame, options, close;
     private ImagePanel imagePanel;
-    //private DescriptionPanel descrPanel;
+    private DescriptionPanel descrPanel;
+
+
+    private GameWindow gameWindow;
     public MainWindow()
     {
         this(TITLE);
         initializeMenus();
         setSize(800,800);
         setResizable(false);
-        setVisible(true);
     }
 
     public MainWindow(String title)
@@ -37,14 +39,16 @@ public class MainWindow extends JFrame{
         close = new JMenuItem("Close");
         mainMenu = new JMenu("File");
         menuBar = new JMenuBar();
-        imagePanel = new ImagePanel("shoot.jpg");
+        imagePanel = new ImagePanel("src/main/resources/shoot.jpg");
 
-        //descrPanel = new DescriptionPanel();
+        descrPanel = new DescriptionPanel("Shoot game v0.1 - CFSNM");
 
 
         newGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("NEW GAME");
+
+                    gameWindow = new GameWindow();
+                    gameWindow.setVisible(true);
             }
         });
 
@@ -66,9 +70,8 @@ public class MainWindow extends JFrame{
         menuBar.add(mainMenu);
         this.add(menuBar, BorderLayout.NORTH);
         this.add(imagePanel, BorderLayout.CENTER);
-
-
         imagePanel.repaint();
+        this.add(descrPanel, BorderLayout.SOUTH);
 
     }
 
