@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 /**
  * Created by Cesar on 27/06/2017.
@@ -24,11 +25,13 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener{
     private Timer timer;
 
     private JPanel paramPanel;
-    //private GameVisor visor;
+    private GameVisor visor;
 
     private Player mainPlayer;
 
     private JLabel lifeLabel, positionLabel;
+
+    private ArrayList<IGameItem> gameItems;
 
     public GameWindow()
     {
@@ -38,14 +41,18 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener{
     public GameWindow(String title)
     {
         super(title);
-        timer = new Timer(10000, this);
-        initializeMenus();
+        timer = new Timer(100, this);
+        initializeGame();
         setSize(800,800);
         setResizable(false);
+        timer.start();
     }
 
-    private void initializeMenus()
+    private void initializeGame()
     {
+        visor = new GameVisor();
+        gameItems = new ArrayList<IGameItem>();
+
         lifeLabel = new JLabel("Life points -> ");
         positionLabel = new JLabel("Position -> ");
         paramPanel = new JPanel();
@@ -54,22 +61,31 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener{
         paramPanel.add(positionLabel, BorderLayout.SOUTH);
 
         this.add(paramPanel, BorderLayout.SOUTH);
+        this.add(visor, BorderLayout.CENTER);
+
+        Player mainPlayer = new Player();
+
+        gameItems.add(mainPlayer);
     }
 
 
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e)
+    {
+        visor.update(gameItems);
+    }
+
+    public void keyTyped(KeyEvent e)
+    {
 
     }
 
-    public void keyTyped(KeyEvent e) {
+    public void keyPressed(KeyEvent e)
+    {
 
     }
 
-    public void keyPressed(KeyEvent e) {
-
-    }
-
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent e)
+    {
 
     }
 }

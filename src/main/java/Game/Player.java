@@ -13,7 +13,7 @@ public class Player implements IGameCharacter {
     public Player()
     {
         position = new Position(30, 300);
-        size = 10;
+        size = 30;
         orientation = 0;
         speed = 1;
         lifePoints = 100;
