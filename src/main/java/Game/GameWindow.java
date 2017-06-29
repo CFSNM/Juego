@@ -1,6 +1,6 @@
 package Game;
 
-import Game.Shapes.Circle;
+import Game.Interfaces.IGameItem;
 import Game.Views.PlayerView1;
 
 import javax.swing.*;

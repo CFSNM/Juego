@@ -1,7 +1,7 @@
 package Game.Views;
 
-import Game.IShape;
-import Game.IShapeView;
+import Game.Interfaces.IShape;
+import Game.Interfaces.IShapeView;
 import Game.Position;
 import Game.Shapes.Circle;
 

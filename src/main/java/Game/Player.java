@@ -1,5 +1,8 @@
 package Game;
 
+import Game.Interfaces.IGameCharacter;
+import Game.Interfaces.IShapeView;
+
 /**
  * Created by Cesar on 27/06/2017.
  */

@@ -1,4 +1,6 @@
-package Game;
+package Game.Interfaces;
+
+import Game.Position;
 
 /**
  * Created by Cesar on 27/06/2017.

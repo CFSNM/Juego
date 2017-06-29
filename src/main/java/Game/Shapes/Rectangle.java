@@ -1,10 +1,9 @@
 package Game.Shapes;
 
-import Game.IShape;
+import Game.Interfaces.IShape;
 import Game.Position;
 
 import java.awt.*;
-import java.awt.geom.AffineTransform;
 
 /**
  * Created by Cesar on 29/06/2017.
