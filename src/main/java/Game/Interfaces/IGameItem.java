@@ -9,6 +9,7 @@ public interface IGameItem {
 
     public Position getPosition();
     public void setPosition(Position pos);
-    public double getSize();
+    public double getWidth();
+    public double getHeight();
 
 }

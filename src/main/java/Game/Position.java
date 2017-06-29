@@ -22,4 +22,15 @@ public class Position {
     {
         return y;
     }
+
+    public void modify(int dx, int dy)
+    {
+        x = x + dx;
+        y = y + dy;
+    }
+
+    public Position translate(int dx, int dy)
+    {
+        return new Position(this.getX() + dx, this.getY() + dy);
+    }
 }

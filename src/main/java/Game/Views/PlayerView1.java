@@ -15,12 +15,14 @@ public class PlayerView1 implements IShapeView {
 
 
     private ArrayList<IShape> viewsList;
+    Position p;
 
     public PlayerView1()
     {
         this.viewsList = new ArrayList<IShape>();
 
-        Circle c = new Circle(30,new Position(100,100));
+        p = new Position(150, 400);
+        Circle c = new Circle(30,p);
         Game.Shapes.Rectangle r = new Game.Shapes.Rectangle(30,30,new Position(100,130));
 
         viewsList.add(c);
@@ -50,6 +52,14 @@ public class PlayerView1 implements IShapeView {
         {
             shape.rotateAboutCenter(angle);
         }
+
+    }
+
+    public Position getPosition() {
+        return null;
+    }
+
+    public void move() {
 
     }
 }

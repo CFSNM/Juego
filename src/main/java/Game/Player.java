@@ -10,14 +10,13 @@ public class Player implements IGameCharacter {
 
 
     Position position;
-    double size, orientation, speed;
+    double width, height, orientation, speed;
     int lifePoints;
     IShapeView sv;
 
     public Player(IShapeView sv)
     {
         position = new Position(30, 300);
-        size = 30;
         orientation = 0;
         speed = 1;
         lifePoints = 100;
@@ -32,8 +31,12 @@ public class Player implements IGameCharacter {
         position = pos;
     }
 
-    public double getSize() {
-        return size;
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight(){
+        return height;
     }
 
     public double getOrientation() {
@@ -43,12 +46,6 @@ public class Player implements IGameCharacter {
     public void setOrientation(double newOrientation) {
 
         orientation = newOrientation;
-    }
-
-
-    public void setSize(double newSize) {
-
-        size = newSize;
     }
 
     public double getSpeed() {
