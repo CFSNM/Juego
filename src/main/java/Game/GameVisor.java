@@ -13,11 +13,13 @@ public class GameVisor extends JPanel {
 
     private ArrayList<IGameItem> gameItems;
     private Map<Class, String> imagePath2ClassMap;
+    private Map<Class, IShapeView> shape2ClassMap;
 
     public GameVisor()
     {
         gameItems = new ArrayList<IGameItem>();
         imagePath2ClassMap = new HashMap<Class, String>();
+        shape2ClassMap = new HashMap<Class, IShapeView>();
     }
 
     public void update(ArrayList<IGameItem> newItems)
@@ -30,12 +32,16 @@ public class GameVisor extends JPanel {
     @Override
     public void paint(Graphics g)
     {
+        super.paint(g);
+        g.setColor(Color.BLUE);
+
         for(IGameItem item : gameItems)
         {
-            if (item instanceof Player)
+            if (item instanceof IGameCharacter)
             {
-                g.drawOval((int)item.getPosition().getX(), (int)item.getPosition().getY(), (int)item.getSize(), (int)item.getSize());
+                ((IGameCharacter)item).getShapeView().drawView(g);
             }
         }
     }
+
 }

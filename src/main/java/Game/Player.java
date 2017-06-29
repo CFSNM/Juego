@@ -9,14 +9,16 @@ public class Player implements IGameCharacter {
     Position position;
     double size, orientation, speed;
     int lifePoints;
+    IShapeView sv;
 
-    public Player()
+    public Player(IShapeView sv)
     {
         position = new Position(30, 300);
         size = 30;
         orientation = 0;
         speed = 1;
         lifePoints = 100;
+        this.sv = sv;
     }
 
     public Position getPosition() {
@@ -62,4 +64,12 @@ public class Player implements IGameCharacter {
     public void setLifePoints(int lifePoints) {
         this.lifePoints = lifePoints;
     }
+
+    public IShapeView getShapeView()
+    {
+        return sv;
+
+    }
+
+    // rotate()
 }

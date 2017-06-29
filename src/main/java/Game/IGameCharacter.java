@@ -12,4 +12,5 @@ public interface IGameCharacter extends IGameItem {
     public void setSpeed(double newSpeed);
     public int getLifePoints();
     public void setLifePoints(int lifePoints);
+    public IShapeView getShapeView();
 }

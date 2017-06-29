@@ -1,5 +1,8 @@
 package Game;
 
+import Game.Shapes.Circle;
+import Game.Views.PlayerView1;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -63,7 +66,9 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener{
         this.add(paramPanel, BorderLayout.SOUTH);
         this.add(visor, BorderLayout.CENTER);
 
-        Player mainPlayer = new Player();
+        PlayerView1 pv1 = new PlayerView1();
+
+        Player mainPlayer = new Player(pv1);
 
         gameItems.add(mainPlayer);
     }
