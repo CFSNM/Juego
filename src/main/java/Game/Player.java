@@ -71,5 +71,28 @@ public class Player implements IGameCharacter {
 
     }
 
-    // rotate()
+    public void move()
+    {
+
+    }
+
+    public void turnRight()
+    {
+
+        orientation = orientation + 10;
+        double dif = orientation - 360;
+        if(dif >= 0.0)
+            orientation = dif;
+
+    }
+
+    public void turnLeft()
+    {
+
+        orientation = orientation - 10;
+        if(orientation <= 0.0)
+            orientation = 360 + orientation;
+    }
+
+
 }

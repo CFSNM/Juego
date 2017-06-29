@@ -31,6 +31,7 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener{
     private GameVisor visor;
 
     private Player mainPlayer;
+    private PlayerView1 pv1;
 
     private JLabel lifeLabel, positionLabel;
 
@@ -66,9 +67,9 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener{
         this.add(paramPanel, BorderLayout.SOUTH);
         this.add(visor, BorderLayout.CENTER);
 
-        PlayerView1 pv1 = new PlayerView1();
+        pv1 = new PlayerView1();
 
-        Player mainPlayer = new Player(pv1);
+        mainPlayer = new Player(pv1);
 
         gameItems.add(mainPlayer);
     }
@@ -76,11 +77,18 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener{
 
     public void actionPerformed(ActionEvent e)
     {
+        pv1.move();
         visor.update(gameItems);
     }
 
     public void keyTyped(KeyEvent e)
     {
+        if (e.getKeyCode() == UpKey)
+            mainPlayer.move();
+        else if (e.getKeyCode() == RightKey)
+            mainPlayer.turnRight();
+        else if (e.getKeyCode() == LeftKey)
+            mainPlayer.turnLeft();
 
     }
 

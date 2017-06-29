@@ -13,5 +13,4 @@ public interface IShapeView {
     public void rotateAboutPoint(double angle, int x, int y);
     public void rotateAboutCenter(double angle);
     public Position getPosition();
-    public void move();
 }

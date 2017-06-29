@@ -21,9 +21,12 @@ public class PlayerView1 implements IShapeView {
     {
         this.viewsList = new ArrayList<IShape>();
 
-        p = new Position(150, 400);
+        p = new Position(150, 350);
+
         Circle c = new Circle(30,p);
-        Game.Shapes.Rectangle r = new Game.Shapes.Rectangle(30,30,new Position(100,130));
+        Position p2 = p.translate(0,25);
+
+        Game.Shapes.Rectangle r = new Game.Shapes.Rectangle(30,30,p2);
 
         viewsList.add(c);
         viewsList.add(r);
@@ -56,10 +59,15 @@ public class PlayerView1 implements IShapeView {
     }
 
     public Position getPosition() {
-        return null;
+        return p;
     }
 
-    public void move() {
+    public void move()
+    {
+        for(IShape shape: viewsList)
+        {
 
+        }
     }
+
 }

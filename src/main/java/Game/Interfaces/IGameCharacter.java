@@ -12,4 +12,7 @@ public interface IGameCharacter extends IGameItem {
     public int getLifePoints();
     public void setLifePoints(int lifePoints);
     public IShapeView getShapeView();
+    public void move();
+    public void turnRight();
+    public void turnLeft();
 }
