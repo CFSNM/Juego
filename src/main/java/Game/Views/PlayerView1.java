@@ -24,7 +24,8 @@ public class PlayerView1 implements IShapeView {
         p = new Position(150, 350);
 
         Circle c = new Circle(30,p);
-        Position p2 = p.translate(0,25);
+        Position p2 = p.copy();
+        p2.modify(0,30);
 
         Game.Shapes.Rectangle r = new Game.Shapes.Rectangle(30,30,p2);
 
@@ -62,11 +63,11 @@ public class PlayerView1 implements IShapeView {
         return p;
     }
 
-    public void move()
+    public void move(double angle, double speed)
     {
         for(IShape shape: viewsList)
         {
-
+            shape.move(angle, speed);
         }
     }
 

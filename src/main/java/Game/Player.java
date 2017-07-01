@@ -16,11 +16,11 @@ public class Player implements IGameCharacter {
 
     public Player(IShapeView sv)
     {
-        position = new Position(30, 300);
-        orientation = 0;
-        speed = 1;
-        lifePoints = 100;
         this.sv = sv;
+        position = sv.getPosition();
+        orientation = 0;
+        speed = 2;
+        lifePoints = 100;
     }
 
     public Position getPosition() {
@@ -73,25 +73,26 @@ public class Player implements IGameCharacter {
 
     public void move()
     {
+        double angle = Math.toRadians(orientation);
+
+        int newX = (int)(position.getX() + Math.cos(angle)*speed);
+        int newY = (int)(position.getY() + Math.sin(angle)*speed);
+
+        Position newP = new Position(newX, newY);
+        this.setPosition(newP);
+        sv.move(orientation, speed);
 
     }
 
     public void turnRight()
     {
-
         orientation = orientation + 10;
-        double dif = orientation - 360;
-        if(dif >= 0.0)
-            orientation = dif;
-
     }
 
     public void turnLeft()
     {
-
         orientation = orientation - 10;
-        if(orientation <= 0.0)
-            orientation = 360 + orientation;
+
     }
 
 

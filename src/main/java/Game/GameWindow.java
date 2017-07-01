@@ -45,10 +45,11 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener{
     public GameWindow(String title)
     {
         super(title);
-        timer = new Timer(100, this);
+        timer = new Timer(1000, this);
         initializeGame();
         setSize(800,800);
         setResizable(false);
+        this.addKeyListener(this);
         timer.start();
     }
 
@@ -77,24 +78,23 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener{
 
     public void actionPerformed(ActionEvent e)
     {
-        pv1.move();
         visor.update(gameItems);
     }
 
     public void keyTyped(KeyEvent e)
     {
-        if (e.getKeyCode() == UpKey)
-            mainPlayer.move();
-        else if (e.getKeyCode() == RightKey)
-            mainPlayer.turnRight();
-        else if (e.getKeyCode() == LeftKey)
-            mainPlayer.turnLeft();
 
     }
 
     public void keyPressed(KeyEvent e)
     {
 
+        if (e.getKeyCode() == UpKey)
+            mainPlayer.move();
+        else if (e.getKeyCode() == RightKey)
+            mainPlayer.turnRight();
+        else if (e.getKeyCode() == LeftKey)
+            mainPlayer.turnLeft();
     }
 
     public void keyReleased(KeyEvent e)

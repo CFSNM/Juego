@@ -14,5 +14,6 @@ public interface IShape {
     public void setPosition(Position newP);
     public void rotateAboutPoint(double angle, int x, int y);
     public void rotateAboutCenter(double angle);
+    public void move(double angle, double speed);
 
 }

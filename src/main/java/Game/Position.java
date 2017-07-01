@@ -29,8 +29,9 @@ public class Position {
         y = y + dy;
     }
 
-    public Position translate(int dx, int dy)
+    public Position copy()
     {
-        return new Position(this.getX() + dx, this.getY() + dy);
+        return new Position(this.x, this.y);
     }
+
 }
