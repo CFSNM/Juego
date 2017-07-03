@@ -18,7 +18,7 @@ public class Player implements IGameCharacter {
     {
         this.sv = sv;
         position = sv.getPosition();
-        orientation = 0;
+        orientation = 90;
         speed = 2;
         lifePoints = 100;
     }
