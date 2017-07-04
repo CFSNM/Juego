@@ -1,9 +1,9 @@
 package Game.Views;
 
-import Game.Interfaces.IShape;
 import Game.Interfaces.IShapeView;
 import Game.Position;
 import Game.Shapes.Circle;
+import Game.Shapes.GameShape;
 import Game.Shapes.Triangle;
 
 import java.awt.*;
@@ -15,12 +15,12 @@ import java.util.ArrayList;
 public class PlayerView1 implements IShapeView {
 
 
-    private ArrayList<IShape> viewsList;
+    private ArrayList<GameShape> viewsList;
     Position p;
 
     public PlayerView1()
     {
-        this.viewsList = new ArrayList<IShape>();
+        this.viewsList = new ArrayList<GameShape>();
 
         p = new Position(150, 350);
 
@@ -31,7 +31,7 @@ public class PlayerView1 implements IShapeView {
         Game.Shapes.Rectangle r = new Game.Shapes.Rectangle(30,30,p2);
 
         Position p3 = p2.copy();
-        p3.modify(0,-30);
+        p3.modify(15,-15);
 
         Triangle t = new Triangle(p3, 30, 30);
         viewsList.add(c);
@@ -41,7 +41,7 @@ public class PlayerView1 implements IShapeView {
     }
     public void drawView(Graphics g)
     {
-        for(IShape shape: viewsList)
+        for(GameShape shape: viewsList)
         {
             shape.draw(g);
         }
@@ -50,7 +50,7 @@ public class PlayerView1 implements IShapeView {
 
     public void rotateAboutPoint(double angle, int x, int y)
     {
-        for(IShape shape: viewsList)
+        for(GameShape shape: viewsList)
         {
             shape.rotateAboutPoint(angle, x, y);
         }
@@ -58,7 +58,7 @@ public class PlayerView1 implements IShapeView {
 
     public void rotateAboutCenter(double angle)
     {
-        for(IShape shape: viewsList)
+        for(GameShape shape: viewsList)
         {
             shape.rotateAboutCenter(angle);
         }
@@ -71,7 +71,7 @@ public class PlayerView1 implements IShapeView {
 
     public void move(double angle, double speed)
     {
-        for(IShape shape: viewsList)
+        for(GameShape shape: viewsList)
         {
             shape.move(angle, speed);
         }
